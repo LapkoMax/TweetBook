@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\C#\\TweetBook\\TweetBook\\TweetBook.csproj": {}
+    "D:\\Projects\\TweetBook\\TweetBook\\TweetBook.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\C#\\TweetBook\\TweetBook\\TweetBook.csproj": {
+    "D:\\Projects\\TweetBook\\TweetBook\\TweetBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\C#\\TweetBook\\TweetBook\\TweetBook.csproj",
+        "projectUniqueName": "D:\\Projects\\TweetBook\\TweetBook\\TweetBook.csproj",
         "projectName": "TweetBook",
-        "projectPath": "E:\\Projects\\C#\\TweetBook\\TweetBook\\TweetBook.csproj",
-        "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\C#\\TweetBook\\TweetBook\\obj\\",
+        "projectPath": "D:\\Projects\\TweetBook\\TweetBook\\TweetBook.csproj",
+        "packagesPath": "C:\\Users\\oadmin\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TweetBook\\TweetBook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Programs\\DevExpressv21.2.4\\Components\\Offline Packages"
+          "D:\\Programs\\DevExpressv21.2\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Максим\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\oadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\Programs\\DevExpressv21.2.4\\Components\\System\\Components\\Packages": {},
+          "D:\\Programs\\DevExpressv21.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

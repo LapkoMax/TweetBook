@@ -78,5 +78,21 @@ namespace TweetBook.Controllers.V1
                 RefreshToken = authResponce.RefreshToken
             });
         }
+
+        [HttpPost(ApiRoutes.Identity.AddRole)]
+        public async Task<IActionResult> AddRoleToUser([FromBody]AddRoleToUserRequest request)
+        {
+            var addedRole = await _identityService.AddRoleToUser(request.UserEmail, request.RoleName);
+
+            if (!addedRole)
+                return BadRequest(new AuthFailedResponce
+                {
+                    Errors = new List<string>
+                    {
+                        "Something goes wrong! Check the user id and role name!"
+                    }
+                });
+            return Ok();
+        }
     }
 }
