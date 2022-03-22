@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,15 +19,18 @@ namespace TweetBook.Controllers.V1
     public class PostsController : Controller
     {
         private IPostService _postService;
-        public PostsController(IPostService postService)
+        private readonly IMapper _mapper;
+        public PostsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Posts.GetAll)]
         public async Task<IActionResult> GetAllAsync()
         {
-            return Ok(await _postService.GetPostsAsync());
+            var posts = await _postService.GetPostsAsync();
+            return Ok(_mapper.Map<List<PostResponse>>(posts));
         }
 
         [HttpGet(ApiRoutes.Posts.Get)]
@@ -35,7 +39,7 @@ namespace TweetBook.Controllers.V1
             var post = await _postService.GetPostByIdAsync(postId);
             if (post == null)
                 return NotFound();
-            return Ok(post);
+            return Ok(_mapper.Map<PostResponse>(post));
         }
 
         [HttpPost(ApiRoutes.Posts.Create)]
@@ -53,11 +57,11 @@ namespace TweetBook.Controllers.V1
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUrl = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}", post.Id.ToString());
 
-            var responsePost = new PostResponse { Id = post.Id };
-            return Created(locationUrl, responsePost);
+            return Created(locationUrl, _mapper.Map<PostResponse>(post));
         }
 
         [HttpDelete(ApiRoutes.Posts.Delete)]
+        [Authorize(Policy = "MustWorkForChapsas")]
         public async Task<IActionResult> DeleteAsync([FromRoute]Guid postId)
         {
             var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
@@ -75,6 +79,7 @@ namespace TweetBook.Controllers.V1
         }
 
         [HttpPut(ApiRoutes.Posts.Update)]
+        [Authorize(Policy = "MustWorkForChapsas")]
         public async Task<IActionResult> UpdateAsync([FromRoute]Guid postId, [FromBody]UpdatePostRequest postRequest)
         {
             var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
@@ -91,7 +96,7 @@ namespace TweetBook.Controllers.V1
             var updated = await _postService.UpdatePostAsync(post);
             if (!updated)
                 return NotFound();
-            return Ok(post);
+            return Ok(_mapper.Map<PostResponse>(post));
         }
     }
 }
