@@ -65,33 +65,6 @@ namespace TweetBook.Installers
             });
 
             services.AddSingleton<IAuthorizationHandler, WorksForCompanyHandler>();
-
-            services.AddSwaggerGen(x =>
-            {
-                x.SwaggerDoc("v1", new OpenApiInfo { Title = "TweetBook API", Version = "v1" });
-
-                var security = new OpenApiSecurityRequirement 
-                {
-                    {new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Id = "Bearer",
-                            Type = ReferenceType.SecurityScheme
-                        }
-                    }, new List<string>()
-                    }
-                };
-
-                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
-                {
-                    Description = "JWT Authorization header using the bearer scheme",
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey
-                });
-                x.AddSecurityRequirement(security);
-            });
         }
     }
 }
