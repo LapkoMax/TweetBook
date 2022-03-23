@@ -25,4 +25,8 @@
     <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TweetBook.Contracts\TweetBook.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

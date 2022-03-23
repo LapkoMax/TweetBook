@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweetBook", "TweetBook\TweetBook.csproj", "{4220E85C-EA91-48FE-8CE2-C4717BA26B06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetBook.Sdk", "TweetBook.Sdk\TweetBook.Sdk.csproj", "{20F4E033-B988-41FF-8500-F551849D7477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetBook.Sdk.Sample", "TweetBook.Sdk.Sample\TweetBook.Sdk.Sample.csproj", "{62041D7A-6178-4667-8DFA-8F28BC44F45A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetBook.Contracts", "TweetBook.Contracts\TweetBook.Contracts.csproj", "{E4D96F74-FEC6-4382-A326-3AE967F2FC36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{4220E85C-EA91-48FE-8CE2-C4717BA26B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4220E85C-EA91-48FE-8CE2-C4717BA26B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4220E85C-EA91-48FE-8CE2-C4717BA26B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F4E033-B988-41FF-8500-F551849D7477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F4E033-B988-41FF-8500-F551849D7477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F4E033-B988-41FF-8500-F551849D7477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F4E033-B988-41FF-8500-F551849D7477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62041D7A-6178-4667-8DFA-8F28BC44F45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62041D7A-6178-4667-8DFA-8F28BC44F45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62041D7A-6178-4667-8DFA-8F28BC44F45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62041D7A-6178-4667-8DFA-8F28BC44F45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D96F74-FEC6-4382-A326-3AE967F2FC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D96F74-FEC6-4382-A326-3AE967F2FC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D96F74-FEC6-4382-A326-3AE967F2FC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D96F74-FEC6-4382-A326-3AE967F2FC36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

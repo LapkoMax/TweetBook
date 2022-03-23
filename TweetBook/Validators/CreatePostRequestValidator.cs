@@ -13,7 +13,7 @@ namespace TweetBook.Validators
         {
             RuleFor(x => x.Name)
                 .NotEmpty()
-                .Matches("^[a-zA-Z0-9]*$");
+                .Matches(@"^[a-zA-Z0-9\s]*$");
         }
     }
 }
