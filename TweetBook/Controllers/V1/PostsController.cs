@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TweetBook.Cache;
 using TweetBook.Contracts.V1;
 using TweetBook.Contracts.V1.Requests;
 using TweetBook.Contracts.V1.Responses;
@@ -32,6 +33,7 @@ namespace TweetBook.Controllers.V1
         /// </summary>
         /// <response code="200">Returns all the posts in the system</response>
         [HttpGet(ApiRoutes.Posts.GetAll)]
+        [Cached(600)]
         [ProducesResponseType(typeof(List<PostResponse>), 200)]
         public async Task<IActionResult> GetAllAsync()
         {
@@ -45,6 +47,7 @@ namespace TweetBook.Controllers.V1
         /// <response code="200">Returns the post in the system</response>
         /// <response code="404">Post is not found</response>
         [HttpGet(ApiRoutes.Posts.Get)]
+        [Cached(600)]
         [ProducesResponseType(typeof(PostResponse), 200)]
         public async Task<IActionResult> GetPostAsync([FromRoute]Guid postId)
         {
