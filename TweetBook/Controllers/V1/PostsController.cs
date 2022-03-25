@@ -36,6 +36,7 @@ namespace TweetBook.Controllers.V1
         /// Returns all the posts in the system
         /// </summary>
         /// <response code="200">Returns all the posts in the system</response>
+        /// <response code="401">Authorization issues</response>
         [HttpGet(ApiRoutes.Posts.GetAll)]
         [Cached(600)]
         [ProducesResponseType(typeof(List<PostResponse>), 200)]
@@ -61,6 +62,7 @@ namespace TweetBook.Controllers.V1
         /// Returns the post in the system
         /// </summary>
         /// <response code="200">Returns the post in the system</response>
+        /// <response code="401">Authorization issues</response>
         /// <response code="404">Post is not found</response>
         [HttpGet(ApiRoutes.Posts.Get)]
         [Cached(600)]
@@ -78,6 +80,7 @@ namespace TweetBook.Controllers.V1
         /// </summary>
         /// <response code="201">Creates a post in the system</response>
         /// <response code="400">Unable to create a post due to validation error</response>
+        /// <response code="401">Authorization issues</response>
         [HttpPost(ApiRoutes.Posts.Create)]
         [Authorize(Policy = "MustWorkForChapsas")]
         [ProducesResponseType(typeof(PostResponse), 201)]
@@ -106,6 +109,7 @@ namespace TweetBook.Controllers.V1
         /// </summary>
         /// <response code="204">Removes a post from the system</response>
         /// <response code="400">Unable to remove a post due to authentication error</response>
+        /// <response code="401">Authorization issues</response>
         /// <response code="404">Unable to remove a post because it is not found</response>
         [HttpDelete(ApiRoutes.Posts.Delete)]
         [Authorize(Policy = "MustWorkForChapsas")]
@@ -131,6 +135,7 @@ namespace TweetBook.Controllers.V1
         /// </summary>
         /// <response code="200">Updates a post in the system</response>
         /// <response code="400">Unable to update a post due to authentication error</response>
+        /// <response code="401">Authorization issues</response>
         /// <response code="404">Unable to update a post because it is not found</response>
         [HttpPut(ApiRoutes.Posts.Update)]
         [Authorize(Policy = "MustWorkForChapsas")]
